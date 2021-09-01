@@ -1,0 +1,41 @@
+<?php
+
+use alfikridotname\ci3_hmvc_cli_command\Cmd;
+
+require_once 'vendor/autoload.php';
+
+if ($argc != 2) {
+    $data = $argv;
+    if ($data[0] == 'gratisan') {
+        if (count($data) > 1) {
+            if ($data[0] == 'gratisan' && $data[1] == 'module') {
+                $cmd = new Cmd();
+                $result = call_user_func_array([$cmd, 'create_module'], [$data[2]]);
+                if ($result) {
+                    echo "Make controller, model and view ?  Type 'y' for continue : ";
+                    $handle = fopen("php://stdin", "r");
+                    $line = fgets($handle);
+                    if (trim($line) == 'y') {
+                        echo "What's is controller, model and view name ? : ";
+                        $handle = fopen("php://stdin", "r");
+                        $line = fgets($handle);
+                        $cmv_name = trim($line);
+                        $result = call_user_func_array([$cmd, 'create_module_component'], [trim($data[2]), $cmv_name]);
+                        if ($result) {
+                            echo "Controller, model and view created successfully";
+                            exit;
+                        }
+                    } else {
+                        echo "\nThanks using this package. If any error bugs, please pull request to me";
+                        exit;
+                    }
+                }
+            }
+        } else {
+            echo "\e[38;5;82mWelcome to CI3 HMVC CLI Command\n\n";
+            echo "\e[38;5;82mHMVC\n";
+            echo "  \e[39mmodule module_name\tMake module\n";
+            exit;
+        }
+    }
+}
