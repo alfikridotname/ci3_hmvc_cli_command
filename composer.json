@@ -9,7 +9,7 @@
     }],
     "minimum-stability": "dev",
     "autoload": {
-        "psr4": {
+        "psr-4": {
             "alfikridotname\\ci3_hmvc_cli_command\\": "src/"
         }
     },
