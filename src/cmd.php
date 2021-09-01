@@ -33,6 +33,10 @@ class Cmd
     public function create_module($module_name)
     {
         $current_dir =  'application/modules';
+        if (!$this->folder_exist($current_dir)) {
+            mkdir($current_dir, 0700, true);
+        }
+
         chdir($current_dir);
         if (FALSE !== ($current_dir = $this->folder_exist($module_name))) {
             exit("Module {$this->color['hijau']}{$module_name} {$this->color['putih']}exist !");
