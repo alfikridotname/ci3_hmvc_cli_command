@@ -13,7 +13,6 @@
         }
     },
     "require": {
-        "alfikridotname/ci3_hmvc_cli_command": "dev-master",
         "php": ">=7.0.0"
     },
     "minimum-stability": "dev"
