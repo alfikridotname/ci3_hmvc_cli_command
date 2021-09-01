@@ -1,0 +1,17 @@
+{
+    "name": "alfikridotname/ci3_hmvc_cli_command",
+    "description": "CodeIgniter 3 HMVC for CLI Command to make module, controller, model dan view",
+    "type": "library",
+    "license": "MIT",
+    "authors": [{
+        "name": "ALFIKRI",
+        "email": "alfikri.name@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr4": {
+            "alfikridotname\\ci3_hmvc_cli_command\\": "src/"
+        }
+    },
+    "require": {}
+}
