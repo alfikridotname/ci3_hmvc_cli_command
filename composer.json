@@ -7,7 +7,7 @@
         "name": "ALFIKRI",
         "email": "alfikri.name@gmail.com"
     }],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "alfikridotname\\ci3_hmvc_cli_command\\": "src/"
