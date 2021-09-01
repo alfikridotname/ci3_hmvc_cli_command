@@ -98,26 +98,18 @@ class Cmd
             $file_css = fopen("css.php", "w");
             $file_js = fopen("js.php", "w");
             $file_index = fopen("index.php", "w");
-            $file_create = fopen("create.php", "w");
-            $file_edit = fopen("edit.php", "w");
             $file_modal = fopen("modal.php", "w");
             require_once(__DIR__ . "/scripts/css.php");
             require_once(__DIR__ . "/scripts/js.php");
             require_once(__DIR__ . "/scripts/index.php");
-            require_once(__DIR__ . "/scripts/create.php");
-            require_once(__DIR__ . "/scripts/edit.php");
             require_once(__DIR__ . "/scripts/modal.php");
             fwrite($file_css, $css_content);
             fwrite($file_js, $js_content);
             fwrite($file_index, $index_content);
-            fwrite($file_create, $create_content);
-            fwrite($file_edit, $edit_content);
             fwrite($file_modal, "");
             fclose($file_css);
             fclose($file_js);
             fclose($file_index);
-            fclose($file_create);
-            fclose($file_edit);
             fclose($file_modal);
 
             chdir($curdir . '/models');
