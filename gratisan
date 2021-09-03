@@ -6,10 +6,10 @@ require_once 'vendor/autoload.php';
 
 if ($argc != 2) {
     $data = $argv;
+    $cmd = new Cmd();
     if ($data[0] == 'gratisan') {
         if (count($data) > 1) {
             if ($data[0] == 'gratisan' && $data[1] == 'module') {
-                $cmd = new Cmd();
                 $result = call_user_func_array([$cmd, 'create_module'], [$data[2]]);
                 if ($result) {
                     echo "Make controller, model and view ?  Type 'y' for continue : ";
@@ -32,9 +32,7 @@ if ($argc != 2) {
                 }
             }
         } else {
-            echo "\e[38;5;82mWelcome to CI3 HMVC CLI Command\n\n";
-            echo "\e[38;5;82mHMVC\n";
-            echo "  \e[39mmodule module_name\tMake module\n";
+            call_user_func_array([$cmd, 'index'], []);
             exit;
         }
     }
