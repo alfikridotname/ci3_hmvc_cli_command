@@ -6,7 +6,7 @@ require_once 'vendor/autoload.php';
 
 if ($argc != 2) {
     $data = $argv;
-    $cmd = new Cmd();
+    $cmd  = new Cmd();
     if ($data[0] == 'gratisan') {
         if (count($data) > 1) {
             if ($data[0] == 'gratisan' && $data[1] == 'module') {

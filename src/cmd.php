@@ -32,7 +32,7 @@ class Cmd
 
     public function create_module($module_name)
     {
-        $current_dir =  'application/modules';
+        $current_dir = getcwd() . '/modules/';
         if (!$this->folder_exist($current_dir)) {
             mkdir($current_dir, 0700, true);
         }
@@ -72,7 +72,7 @@ class Cmd
         $controller_name = $name;
         $model_name = $name . '_model';
         $curdir = getcwd();
-        chdir($curdir . '\configs');
+        chdir($curdir . '/configs');
         $file_config = fopen(ucfirst($controller_name) . ".php", "w");
         require_once(__DIR__ . "/scripts/config.php");
         fwrite($file_config, $config_content);
